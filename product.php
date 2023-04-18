@@ -8,13 +8,16 @@ class Product{
 
     public function __construct($name,$price,$image)
     {
+        if(empty($name)){
+            throw new Exception('Il nome del prodotto deve essere specificato');
+        }
         $this->name = $name;
         $this->price = $price;
         $this->image = $image;
     }
 
     public function getName(){
-        return $this->name;
+        return $this->name ?? '';
     }
 
     public function getPrice(){

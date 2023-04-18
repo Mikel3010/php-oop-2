@@ -15,14 +15,14 @@ require_once 'trait.php';
 <body>
     <h1>Prodotti per animali</h1>
     <div class="container">
-    <?php 
+    <?php
     $products = array(
         new DogProduct('Cuccia per cani', 100,'img/cuccia.jpg','Medio'),
         new CatProduct('Lettiera per gatti',50,'img/lettiera.jpg','Chiusa'),
         new CatProduct('Lettiera per gatti',70,'img/lettieraap.jpg','Aperta'),
         new FishProduct('Acquario',200,'img/acquario.jpg','Dolce'),
         new FishProduct('Acquario',300,'img/acquario2.jpg','Dolce'),
-        new FishProduct('Cibo per pesci',5,'img/cibopesci.jpg','Dolce')
+        new FishProduct('',5,'img/cibopesci.jpg','Dolce')
     )  ;
     $products[0]->applyDiscount($products[0]->getPrice()*0.3);
     $products[3]->applyDiscount($products[3]->getPrice()*0.4);
