@@ -1,6 +1,7 @@
 <?php
-
+require_once 'trait.php';
 class Product{
+    use Discount;
     protected $name;
     protected $price;
     protected $image;
@@ -60,3 +61,4 @@ class FishProduct extends Product{
         return $this->waterType;
     }
 }
+

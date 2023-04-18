@@ -1,5 +1,6 @@
 <?php
 require_once 'product.php';
+require_once 'trait.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,11 +20,12 @@ require_once 'product.php';
         new DogProduct('Cuccia per cani', 100,'img/cuccia.jpg','Medio'),
         new CatProduct('Lettiera per gatti',50,'img/lettiera.jpg','Chiusa'),
         new CatProduct('Lettiera per gatti',70,'img/lettieraap.jpg','Aperta'),
-        new CatProduct('Giocattolo per gatti',10,'img/palla.jpg','Palla'),
         new FishProduct('Acquario',200,'img/acquario.jpg','Dolce'),
         new FishProduct('Acquario',300,'img/acquario2.jpg','Dolce'),
         new FishProduct('Cibo per pesci',5,'img/cibopesci.jpg','Dolce')
     )  ;
+    $products[0]->applyDiscount($products[0]->getPrice()*0.3);
+    $products[3]->applyDiscount($products[3]->getPrice()*0.4);
     foreach ($products as $product) {
         echo '<div class="product">';
         echo '<h2>' . $product->getName() . '</h2>';
